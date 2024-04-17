@@ -1,16 +1,15 @@
+import { Routes, Route } from "react-router-dom";
 import "./App.css";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import "bootstrap/dist/css/bootstrap.min.css";
-import Lobby from "./Pages/Lobby";
+import LobbyScreen from "./screens/Lobby";
+import RoomPage from "./screens/Room";
 
 function App() {
   return (
-    <div>
-      <Router>
-        <Routes>
-          <Route path="/lobby" element={<Lobby />} />
-        </Routes>
-      </Router>
+    <div className="App">
+      <Routes>
+        <Route path="/" element={<LobbyScreen />} />
+        <Route path="/room/:roomId" element={<RoomPage />} />
+      </Routes>
     </div>
   );
 }
